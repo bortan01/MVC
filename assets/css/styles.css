@@ -1,0 +1,262 @@
+/*estilos generales */
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: sans-serif;
+
+}
+body{
+    background: url(../img/bg.png)
+}
+a{
+    color:  #01B1EA;
+}
+
+a:visited{
+    color:  #01B1EA;
+}
+a:hover{
+    color:  #555555;
+}
+
+
+#header{
+       
+    height: 145px;
+    background: red;
+        
+}
+#container{
+     width:80%;
+     margin: 0px auto;
+     text-shadow: 0px 0px 10px  gray;
+     background: orange;
+     
+}
+div {
+  border-color: gray;
+  border-width: 1px;
+  border-style: solid;
+} 
+
+/*estilo a heder*/
+
+/*IMAGENES QUE ESTAN DENTRO DE LA CLASE PRODUCTO*/
+#logo{
+   padding: 20px;
+   float: left;
+   margin-left: 30px;
+}
+
+#logo img{
+    float: left;
+    height: 100px;
+  
+    
+}
+#logo a {
+    float: left;
+    font-size: 30px;
+    letter-spacing: 4px;
+    font-family: 'Open Sans', Helvetica, Arial;
+    text-transform: lowercase;
+    color: #01B1EA;
+    font-weight: bold;
+    text-decoration: none;
+    margin-top: 18px;
+    margin-left: 25px;
+    text-shadow: 0px 0px 10px blue;
+   
+}
+/*menu*/
+
+#menu{ 
+    clear: both;
+    background: #222;
+    color: white;
+    height: 55px;
+   border-bottom: 4px solid #01B1EA ;
+    /*padding-bottom: 50px;*/
+       
+}
+#menu a {
+    padding-left: 10px;
+    padding-right: 10px;
+    display: block;
+   color: white;
+   text-decoration: none;
+   transition: all 500ms;
+
+   
+}
+#menu ul {
+    list-style: none;
+    text-decoration: none;
+   margin-left: 25px;
+   margin: 0px auto;
+
+}
+#menu ul li{
+    line-height: 55px;
+    float: left;
+    border-right: 1px solid #363636;
+  
+    
+}
+#menu a :first-child{
+      border-left:1px solid #363636;
+}
+#menu a:hover{
+   background:  #01B1EA;
+}
+
+/*;ARA EL CONTENT*/
+#content{
+   margin: 0px auto;
+   overflow: hidden;
+   background: green;
+   
+   
+}
+/*barra lateral*/
+#lateral{
+    width: 20%;
+    float: left;
+    margin-top: 20px;
+    margin-left: 10px;
+       min-height: 500px;
+       
+}
+#lateral .block_aside{
+/*    display: block;*/
+    width: 90%;
+    margin: 5px auto;
+    padding: 10px;
+    
+}
+#lateral h3{
+    display: block;
+    color: violet;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 20px;
+    padding-top: 2px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    background: red;
+    
+}
+
+#lateral ul li{
+    list-style: square;
+    margin-left: 20px;
+}
+
+label, input[type="text"],
+input[type="password"],
+input[type="email"],
+select{
+    display: block;
+    width: 95%;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+select{
+    border: 1px solid aqua;
+    box-shadow: 0px 0px 0px #000022 inset;
+    background: #00ff00;
+    padding: 2px;
+    color: black;
+    transition: all 300ms;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus
+{
+    border: 1px solid orange;
+    box-shadow: 0px 0px 0px #000022 inset;
+    background: #00ff00;
+    padding: 2px;
+    color: blue;
+    transition: all 300ms;
+}
+
+input[type="button"],
+input[type="submit"],
+button, .button
+{
+    display: block;
+    border-radius: 2px;
+    width: auto;
+    padding: 5px;
+    color: #ffffff;
+    background: #2979CD;
+    border:  1px solid #11608E;
+    cursor: progress;
+    padding-left: 10px;
+    padding-left: 10px;
+    
+    
+    
+       
+}
+.button{
+    background: #66ff66;
+    color: white !important;
+    text-decoration: none;
+}
+/*PARTE CENTRAL*/
+#central{
+    width: 74%;
+    min-height: 500px;
+    float: right;
+    border-left: 1px solid #ccc;
+    box-shadow: -5px -1px 5px #ddd;
+    padding: 25px;
+    text-align: center;
+        
+    
+}
+#central h1{
+    font-size: 25px;
+    font-weight: normal;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+   
+   padding: 20px;
+}
+
+.product{
+    width: 25%;
+    border-right: 1px solid #ccc;
+    background: yellow;
+    float: left;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.product img{
+    width: 100px;
+    
+}
+
+/*PIE DE PAGINA*/
+#footer{
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: white;
+    background: #222;
+    border-top: 5px solid #01B1EA;
+    
+    
+}
