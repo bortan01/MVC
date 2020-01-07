@@ -1,0 +1,18 @@
+<IfModule mod_rewrite.c>
+#ACTIVAR EL REWRITE
+
+RewriteEngine on
+ErrorDocument 404 http://localhost/MVC/error
+
+
+ 
+# if a directory or a file exists, use it directly
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+
+#la magia
+RewriteRule ^(.*)/(.*) index.php?controller=$1&action=$2
+
+
+ </IfModule>

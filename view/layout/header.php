@@ -3,14 +3,14 @@
     <head>
         <meta charset="UTF-8">
         <title>TIENDA DE CAMISAS  </title>
-        <link rel="stylesheet" href="assets/css/styles.css">
+        <link rel="stylesheet" href="<?=base_url?>assets/css/styles.css">
     </head>
     <body>
         <div id="container">
             <!--         CABECERA  -->
             <header id="header">
                 <div id="logo">
-                    <img src="assets/img/camiseta.png" alt="camiseta logo">
+                    <img src="<?=base_url?>assets/img/camiseta.png" alt="camiseta logo">
                     <a href="index.php">TIENDA DE CAMISETAS</a> 
                 </div>
             </header>

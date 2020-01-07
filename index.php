@@ -1,13 +1,19 @@
 <?php
 require_once './autoload.php';
+include_once './config/parameters.php';
 require_once './view/layout/header.php';
 require_once './view/layout/sidebar.php';
 
+function showError() {
+    $err = new errorController();
+    $err->index();
+}
 
 if (isset($_GET['controller'])) {
     $nombre_controlador = $_GET['controller'].'Controller';
 } else {
-    echo 'la pagina que buscas no exise 1';
+   // echo '<br>la pagina que buscas no exise 1';
+   showError();
     exit();
 }
 
@@ -18,11 +24,13 @@ if(class_exists($nombre_controlador)){
         $action = $_GET['action'];
         $controlador->$action();
     }else{
-        echo 'la pagina que buscas no existe 2';
+       // echo 'la pagina que buscas no existe 2';
+       showError();
     }
     
 } else {
-    echo 'la pagina que buscas no existe 3';
+    //echo 'la pagina que buscas no existe 3';
+         showError();
 }
-echo 'dfadfadfadfadfaf';
+
 include_once './view/layout/footer.php';
