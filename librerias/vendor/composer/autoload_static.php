@@ -6,6 +6,10 @@ namespace Composer\Autoload;
 
 class ComposerStaticInit22016962781cc4d51f7e9ba819d6e45a
 {
+    public static $files = array (
+        '0a80d26768cd24fcdbe75bdd719255c1' => __DIR__ . '/..' . '/firephp/firephp-core/lib/FirePHPCore/fb.php',
+    );
+
     public static $prefixLengthsPsr4 = array (
         'S' => 
         array (
@@ -22,6 +26,9 @@ class ComposerStaticInit22016962781cc4d51f7e9ba819d6e45a
 
     public static $classMap = array (
         'Datamatrix' => __DIR__ . '/..' . '/tecnickcom/tcpdf/include/barcodes/datamatrix.php',
+        'FB' => __DIR__ . '/..' . '/firephp/firephp-core/lib/FirePHPCore/fb.php',
+        'FirePHP' => __DIR__ . '/..' . '/firephp/firephp-core/lib/FirePHPCore/FirePHP.class.php',
+        'FirePHP_TestWrapper' => __DIR__ . '/..' . '/firephp/firephp-core/lib/FirePHPCore/FirePHP_TestWrapper.class.php',
         'PDF417' => __DIR__ . '/..' . '/tecnickcom/tcpdf/include/barcodes/pdf417.php',
         'QRcode' => __DIR__ . '/..' . '/tecnickcom/tcpdf/include/barcodes/qrcode.php',
         'TCPDF' => __DIR__ . '/..' . '/tecnickcom/tcpdf/tcpdf.php',

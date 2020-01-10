@@ -6,17 +6,15 @@
  * and open the template in the editor.
  */
 
-class Connect {
+class Database {
 
-    public static function conect($param) {
-        $db = new mysqli('lochalhost', 'root' , '' , 'tienda_master');
+    public static function conect() {
+        $db = new mysqli('localhost', 'root' , '' , 'tienda_master');
         $db->query("SET NAMES 'UTF-8'");
         return $db; 
         
     }
-            
-    function __construct() {
-        
-    } 
+           
 
 }
+Database::conect();

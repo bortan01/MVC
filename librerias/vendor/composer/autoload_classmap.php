@@ -7,6 +7,9 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Datamatrix' => $vendorDir . '/tecnickcom/tcpdf/include/barcodes/datamatrix.php',
+    'FB' => $vendorDir . '/firephp/firephp-core/lib/FirePHPCore/fb.php',
+    'FirePHP' => $vendorDir . '/firephp/firephp-core/lib/FirePHPCore/FirePHP.class.php',
+    'FirePHP_TestWrapper' => $vendorDir . '/firephp/firephp-core/lib/FirePHPCore/FirePHP_TestWrapper.class.php',
     'PDF417' => $vendorDir . '/tecnickcom/tcpdf/include/barcodes/pdf417.php',
     'QRcode' => $vendorDir . '/tecnickcom/tcpdf/include/barcodes/qrcode.php',
     'TCPDF' => $vendorDir . '/tecnickcom/tcpdf/tcpdf.php',

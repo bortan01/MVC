@@ -3,12 +3,15 @@
     <h3>ENTRAR A LA WEB</h3>
     <div id="login" class="block_aside">
         <form action="#" method="post">
+            
+    
             <label for="email">Email</label>
             <input type="email" name="email"/>
 
             <label for="password">password</label>
             <input type="password" name="password"/>
-            <input type="submit" value="Eviar"
+            <input type="submit" value="Eviar">
+       
         </form>   
         <ul>
             <li><a href="#">Mis pedidos</a></li>
