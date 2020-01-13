@@ -2,7 +2,9 @@
 <aside id="lateral">
     <h3>ENTRAR A LA WEB</h3>
     <div id="login" class="block_aside">
-        <form action="#" method="post">
+        <?php if (!isset($_SESSION['identity'])) : ?>
+        
+        <form action="<?= base_url ?>usuario/login" method="post">
             
     
             <label for="email">Email</label>
@@ -13,6 +15,9 @@
             <input type="submit" value="Eviar">
        
         </form>   
+        <?php else :?>
+        <h3> <?= ($_SESSION['identity']->nombre . " " . $_SESSION['identity']->email);?> </h3>
+        <?php endif; ?>
         <ul>
             <li><a href="#">Mis pedidos</a></li>
             <li><a href="#">Gestionar Categorias</a></li>

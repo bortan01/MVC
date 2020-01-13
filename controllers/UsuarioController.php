@@ -22,7 +22,7 @@ class UsuarioController {
             // var_dump($usuario);
             //var_dump($usuario);
             if ($save) {
-               ///si el registro a terminado con exito 
+                ///si el registro a terminado con exito 
                 $_SESSION['register'] = "completo";
             } else {
                   $_SESSION['register'] = "fallido";
@@ -32,6 +32,28 @@ class UsuarioController {
               header('Location:'.base_url.'usuario/registro');
         }
       header('Location:'.base_url.'usuario/registro');
+    }
+    
+    public function login() {
+        if (isset($_POST)) {
+             ///IDENTIFICAR USUARIO
+            ///consulta a la base de datos 
+            $usuario = new Usuario();
+
+            $resultado = ($usuario->login($_POST['email'], $_POST['password']));
+            if ($resultado && is_object($resultado)) {
+                $_SESSION['identity'] = $resultado;
+                if ($resultado->rol == 'admin') {
+                    $_SESSION['admin'] = true;
+                }
+            } else {
+                $_SESSION['error_login'] = "identificacion fallidia !!!";
+            }
+            
+            
+
+        }
+        header("Location:".base_url."usuario/registro");
     }
 
 }
