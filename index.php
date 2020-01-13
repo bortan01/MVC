@@ -1,10 +1,11 @@
 <?php
+session_start();
 require_once './autoload.php';
 include_once './config/parameters.php';
 require_once './view/layout/header.php';
 require_once './view/layout/sidebar.php';
 require_once './config/db.php';
- 
+require_once './helpers/Utils.php';
 ////conexion a la base de datos 
 
 

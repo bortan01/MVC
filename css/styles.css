@@ -264,7 +264,7 @@ button{
 #central{
     width: 72%;
     min-height: 500px;
-    float: right;
+    float: left;
     border-left: 1px solid #ccc;
     box-shadow: -5px -1px 5px #ddd;
     padding:25px;

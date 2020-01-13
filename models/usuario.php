@@ -52,19 +52,19 @@ class Usuario {
     }
 
     function setNombre($nombre) {
-        $this->nombre = $nombre;
+        $this->nombre = $this->db->real_escape_string($nombre);
     }
 
     function setApellido($apellido) {
-        $this->apellido = $apellido;
+        $this->apellido = $this->db->real_escape_string($apellido);
     }
 
     function setEmail($email) {
-        $this->email = $email;
+        $this->email = $this->db->real_escape_string($email);
     }
 
     function setPassword($password) {
-        $this->password = $password;
+        $this->password = password_hash($this->db->real_escape_string($password), PASSWORD_BCRYPT, ['cost' => 4]);
     }
 
     function setImagen($imagen) {
@@ -79,9 +79,9 @@ class Usuario {
         $sql = "INSERT INTO usuarios values (null, '{$this->getNombre()}', '{$this->getApellido()}', '{$this->getEmail()}', '{$this->getPassword()}', 'user',null) ";
        //var_dump($sql);
         //die();
-        \FB::log($sql);
+        
         $save = $this->db->query($sql);
-        \FB::log($save);
+        
  
         return $save;
     }

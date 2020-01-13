@@ -20,14 +20,18 @@ class UsuarioController {
              $usuario->setPassword($_POST['password']);
              $save = $usuario->save();
             // var_dump($usuario);
-            var_dump($save);
+            //var_dump($usuario);
             if ($save) {
-                echo 'registro completado';
+               ///si el registro a terminado con exito 
+                $_SESSION['register'] = "completo";
             } else {
-                echo 'registro fallido';
+                  $_SESSION['register'] = "fallido";
             }
+        }else{
+              $_SESSION['register'] = "fallido";
+              header('Location:'.base_url.'usuario/registro');
         }
-    
+      header('Location:'.base_url.'usuario/registro');
     }
 
 }
