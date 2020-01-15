@@ -2,7 +2,7 @@
 <aside id="lateral">
     <h3>ENTRAR A LA WEB</h3>
     <div id="login" class="block_aside">
-        <?php if (!isset($_SESSION['identity'])) : ?>
+        <?php if (!isset($_SESSION['identity']))  : ?>
         
         <form action="<?= base_url ?>usuario/login" method="post">
             
@@ -15,13 +15,14 @@
             <input type="submit" value="Eviar">
        
         </form>   
-        <?php else :?>
+        <?php else  :?>
         <h3> <?= ($_SESSION['identity']->nombre . " " . $_SESSION['identity']->email);?> </h3>
         <?php endif; ?>
         <ul>
             <li><a href="#">Mis pedidos</a></li>
             <li><a href="#">Gestionar Categorias</a></li>
             <li><a href="#">Gestionar Productos</a></li>
+            <li><a href="<?=  base_url ?>usuario/cerrar_sesion">Cerrar Sesion</a></li>
         </ul>
     </div>
 </aside>

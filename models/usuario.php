@@ -91,6 +91,9 @@ class Usuario {
         $sql = "select * from usuarios where email = '{$email}' ";
     
         $loguin = $this->db->query($sql);
+       
+        
+        
         if ($loguin && $loguin->num_rows ==1) {
             ///para transformar la respuesta de sql a un objeto
             $usuario = $loguin->fetch_object();
@@ -98,9 +101,8 @@ class Usuario {
             
             //verificar la contrase;a
             $verificacion = password_verify($contra , $usuario->password); 
+          
             if ($verificacion) {
-               // var_dump($usuario);
-               // die();
                 return $usuario;
                 
             }

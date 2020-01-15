@@ -36,11 +36,14 @@ class UsuarioController {
     
     public function login() {
         if (isset($_POST)) {
+           // var_dump($_POST['password']);
              ///IDENTIFICAR USUARIO
             ///consulta a la base de datos 
             $usuario = new Usuario();
 
             $resultado = ($usuario->login($_POST['email'], $_POST['password']));
+          
+            
             if ($resultado && is_object($resultado)) {
                 $_SESSION['identity'] = $resultado;
                 if ($resultado->rol == 'admin') {
@@ -50,10 +53,21 @@ class UsuarioController {
                 $_SESSION['error_login'] = "identificacion fallidia !!!";
             }
             
-            
+            var_dump($_SESSION['identity']);
+        
 
         }
         header("Location:".base_url."usuario/registro");
+    }
+    public function cerrar_sesion() {
+        if (isset($_SESSION['identity'])) {
+            unset($_SESSION['identity']);
+        }
+        
+        if (isset($_SESSION['admin'])) {
+            unset($_SESSION['admin']);
+        }
+        header("Location:".base_url);
     }
 
 }
