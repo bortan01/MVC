@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>TIENDA DE CAMISAS  </title>
-        <link rel="stylesheet" href="<?=base_url?>assets/css/styles.css">
+        <link rel="stylesheet" href="<?=base_url?>css/styles.css">
     </head>
     <body>
         <div id="container">
