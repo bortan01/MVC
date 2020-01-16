@@ -13,5 +13,26 @@ class CategoriaController {
         $todas_categorias = $categoria->getAll();
         require_once 'view/categorias/index.php';
     }
+    public function crear() {
+        require_once 'view/categorias/crear.php';
+    }
+    
+    public function save() {
+       // var_dump(Utils::EsAdmin());
+        ///guardar la categoria en la base de datos  
+        
+        if (isset($_POST) && isset($_POST['nombre'])) {
+            $categoria = new Categoria;
+            $categoria->setNombre($_POST['nombre']);
+            $categoria->save();
+            header("Location:".base_url.'categoria/index');
+            echo "Location:".base_url.'categoria/index';
+            die();
+           
+        }
+        header("Location:".base_url);
+ 
+    }
 
 }
+ 

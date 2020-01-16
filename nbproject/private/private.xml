@@ -4,14 +4,11 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/wamp64/www/MVC/models/usuario.php</file>
-            <file>file:/C:/wamp64/www/MVC/index_maqueta.php</file>
-            <file>file:/C:/wamp64/www/MVC/controllers/UsuarioController.php</file>
+            <file>file:/C:/wamp64/www/MVC/controllers/CategoriaController.php</file>
             <file>file:/C:/wamp64/www/MVC/helpers/Utils.php</file>
-            <file>file:/C:/wamp64/www/MVC/css/styles.css</file>
+            <file>file:/C:/wamp64/www/MVC/models/Categoria.php</file>
+            <file>file:/C:/wamp64/www/MVC/view/categorias/crear.php</file>
             <file>file:/C:/wamp64/www/MVC/view/layout/sidebar.php</file>
-            <file>file:/C:/wamp64/www/MVC/view/usuario/registro.php</file>
-            <file>file:/C:/wamp64/www/MVC/a.js</file>
-            <file>file:/C:/wamp64/www/MVC/index.php</file>
         </group>
     </open-files>
 </project-private>

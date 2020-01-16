@@ -17,5 +17,12 @@ class Utils {
         
         
     }
+    public static function EsAdmin() {
+        if (!isset($_SESSION['admin'])) {
+            header("Location:".base_url);
+        } else {
+            return true;
+        }
+    }
 
 }
