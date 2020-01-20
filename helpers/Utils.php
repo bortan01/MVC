@@ -6,7 +6,7 @@
  * and open the template in the editor.
  */
 
-class Utils {
+class  Utils {
 
     public static function deleteSession($nombre) {
         if (isset($_SESSION[$nombre])) {
@@ -23,6 +23,14 @@ class Utils {
         } else {
             return true;
         }
+    }
+    
+    public static function showCategorias() {
+       require_once 'models/Categoria.php';
+        $categoria = new Categoria();
+        return $categoria->getAll();
+     
+        
     }
 
 }

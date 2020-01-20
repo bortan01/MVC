@@ -16,32 +16,19 @@
             </header>
 
             <!--         MENU  -->
-
+            <?php 
+             require_once './helpers/Utils.php';
+            $categorias = Utils::showCategorias(); ?>
             <nav id="menu">
                 <ul>
                     <li>
                         <a href="#">INICIO  </a>
+                        <?php while ($cat = $categorias->fetch_object()) : ?>
+                            <li><a href="#"><?= $cat->nombre?></a></li>
+                        <?php endwhile; ?>
                     </li>
 
-                    <li>
-                        <a href="#">CATEGORIA 1</a>
-                    </li>
-
-                    <li>
-                        <a href="#">CATEGORIA 2</a>
-                    </li>
-
-                    <li>
-                        <a href="#">CATEGORIA 3 </a>
-                    </li>
-
-                    <li>
-                        <a href="#">CATEGORIA 4 </a>
-                    </li>
-
-                    <li>
-                        <a href="#">CATEGORIA 5 </a>
-                    </li>
+                    
                 </ul>
             </nav>
 

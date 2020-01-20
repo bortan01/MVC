@@ -1,14 +1,19 @@
 <?php
 session_start();
+
 require_once './autoload.php';
+require_once './config/db.php';
+
+
 include_once './config/parameters.php';
+require_once './helpers/Utils.php';
 require_once './view/layout/header.php';
 require_once './view/layout/sidebar.php';
-require_once './config/db.php';
-require_once './helpers/Utils.php';
+
 ////conexion a la base de datos 
-
-
+//
+//$categorias = Utils::showCategorias();
+//var_dump($categorias);
 function showError() {
     $err = new errorController();
     $err->index();

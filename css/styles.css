@@ -183,6 +183,7 @@ td{
     width: 50%;
 }
 
+
 label,
 input[type="text"],
 input[type="password"],
@@ -416,4 +417,9 @@ button{
     float: left;
     padding:2px;
     margin: 7px;
+}
+
+form{
+    width: 50%;
+    text-align: center;
 }

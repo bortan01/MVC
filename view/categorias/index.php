@@ -1,4 +1,4 @@
-<h1>GESTIONAR CATEGORIAS </h1>
+ <h1>GESTIONAR CATEGORIAS </h1>
 
 <a class="button button-small" href="<?= base_url?>categoria/crear" >CREAR CATEGORIA</a>
 

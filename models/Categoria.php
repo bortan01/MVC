@@ -7,7 +7,7 @@ class Categoria {
     private $db;
 
     function __construct() {
-        $this->db = Database::conect();
+              $this->db = Database::conect();
     }
 
     function getId() {
