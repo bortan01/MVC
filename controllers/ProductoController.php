@@ -37,11 +37,11 @@ class ProductoController {
             $stok = isset($_POST['stok']) ? $_POST['stok'] : false;
             $categoria = isset($_POST['categoria']) ? $_POST['categoria'] : false;
             $imagen = isset($_POST['imagen']) ? $_POST['imagen'] : false;
-         var_dump($nombre);
-         var_dump($descripcion);
-         var_dump($precio);
-         var_dump($stok); 
-         var_dump($categoria); 
+//         var_dump($nombre);
+//         var_dump($descripcion);
+//         var_dump($precio);
+//         var_dump($stok); 
+//         var_dump($categoria); 
          
             
             if ($nombre && $descripcion && $precio && $stok && $categoria) {
@@ -52,9 +52,28 @@ class ProductoController {
                 $producto->setCategoria_id($categoria);
                 $producto->setStock($stok);
                 
-                $save = $producto->save();
-                var_dump($save);
-                //die();
+                ///GUARDAR LA IMAGEN
+                $archivo = $_FILES['imagen'];
+                $fileName = $archivo['name'];
+                $extencion = $archivo['type']; ////mime types PHP
+                
+               
+                
+                if ($extencion == "image/jpg" || $extencion == "image/jpeg" || $extencion=="image/png" || $extencion=="image/git") {
+                   ///para saber si no existe la carpeta uploads en la raiz del proyecto
+                    if (!is_dir('uploads/images')) {
+                        ///si no existe la creamos
+                        mkdir("uploads/images", 0777, true); ///sin el true no se puede crear un arrchivo de manera recursiva
+                    }
+                    ///para mover el archivo a la carpeta correspondiente
+                    move_uploaded_file($archivo['tmp_name'], 'uploads/images/'.$fileName);
+                    $producto->setImagen($fileName);
+                    
+                   
+
+                }
+                 $save = $producto->save();
+
                 
                 
                 if ($save) {
@@ -62,7 +81,7 @@ class ProductoController {
                 } else {
                      $_SESSION['producto'] = 'fail';
                 }
-                
+                 
                 
                 
             } else {
