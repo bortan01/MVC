@@ -92,7 +92,7 @@ class Producto {
       return $productos;
     }
    public function save() {
-        $sql = "INSERT INTO productos values  (null,'{$this->categoria_id}','{$this->nombre}', '{$this->getDescripcion()}', '{$this->precio}', '$this->stock', '{$this->oferta}', curdate(),null )";
+        $sql = "INSERT INTO productos values  (null,'{$this->categoria_id}','{$this->nombre}', '{$this->getDescripcion()}', '{$this->precio}', '$this->stock', '{$this->oferta}', curdate(),'{$this->imagen}' )";
                
         $save = $this->db->query($sql);
 //        var_dump($sql);

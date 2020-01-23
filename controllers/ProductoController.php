@@ -37,12 +37,7 @@ class ProductoController {
             $stok = isset($_POST['stok']) ? $_POST['stok'] : false;
             $categoria = isset($_POST['categoria']) ? $_POST['categoria'] : false;
             $imagen = isset($_POST['imagen']) ? $_POST['imagen'] : false;
-//         var_dump($nombre);
-//         var_dump($descripcion);
-//         var_dump($precio);
-//         var_dump($stok); 
-//         var_dump($categoria); 
-         
+       
             
             if ($nombre && $descripcion && $precio && $stok && $categoria) {
                 $producto = new Producto();
@@ -57,8 +52,6 @@ class ProductoController {
                 $fileName = $archivo['name'];
                 $extencion = $archivo['type']; ////mime types PHP
                 
-               
-                
                 if ($extencion == "image/jpg" || $extencion == "image/jpeg" || $extencion=="image/png" || $extencion=="image/git") {
                    ///para saber si no existe la carpeta uploads en la raiz del proyecto
                     if (!is_dir('uploads/images')) {
@@ -66,24 +59,18 @@ class ProductoController {
                         mkdir("uploads/images", 0777, true); ///sin el true no se puede crear un arrchivo de manera recursiva
                     }
                     ///para mover el archivo a la carpeta correspondiente
-                    move_uploaded_file($archivo['tmp_name'], 'uploads/images/'.$fileName);
-                    $producto->setImagen($fileName);
-                    
-                   
+                    $nombreImagen = Utils::Generar_codigoImagen($fileName, $extencion);///esta funcion es para evitar perdida de imagenes cuando tengan el mimsmo nombre
 
+                    ///con esto creamos movemos el arrchivo temporar de la imagen a la carpeta correspondiente
+                    move_uploaded_file($archivo['tmp_name'], 'uploads/images/'.$nombreImagen); 
+                    $producto->setImagen($nombreImagen);
                 }
                  $save = $producto->save();
-
-                
-                
-                if ($save) {
+               if ($save) {
                     $_SESSION['producto'] = 'complete';
                 } else {
                      $_SESSION['producto'] = 'fail';
                 }
-                 
-                
-                
             } else {
                  $_SESSION['producto'] = 'fail';
             }

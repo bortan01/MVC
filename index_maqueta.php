@@ -1,2 +1,11 @@
-<iframe width="560" height="315" src="https://www.youtube.com/embed/eeOo2uxEvng?start=5202" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<?php include_once './helpers/Utils.php';?>
+<?php
+ 
+echo  limpia_espacios("pantalon verde morado",'jpg');
+
+function limpia_espacios($cadena, $extencion){
+    $alatorio = rand(0, 10000);
+	$cadena = trim(str_replace(' ', '_', $cadena)).$alatorio.'.'.$extencion;
+	return $cadena;
+}
+
+?>
