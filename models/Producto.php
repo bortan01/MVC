@@ -101,6 +101,39 @@ class Producto {
  
         return $save;
     }
+    public function delete() {
+         $sql = "delete from productos where id = '{$this->id}'";
+         $delete = $this->db->query($sql);
+         return $delete;
+    }
+    public function getOne() {
+        $sql = "select * from productos where id = '{$this->getId()}'";
+       $producto = $this->db->query($sql);
+       return $producto->fetch_object();
+    }
+    
+     public function update() {
+         var_dump($this->id);
+     
+         
+         ///verificamos si se ha subido o no una foto nueva
+         if ($this->imagen == null) {
+              $sql = "UPDATE productos set nombre='{$this->nombre}',descripcion= '{$this->getDescripcion()}', precio ='{$this->precio}',stock ='$this->stock' where id = '{$this->id}'  ";
+         }else{
+              $sql = "UPDATE productos set nombre='{$this->nombre}',descripcion= '{$this->getDescripcion()}', precio ='{$this->precio}',stock ='$this->stock',imagen='{$this->imagen}' where id = '{$this->id}'";
+         }
+         
+         
+       
+               
+        $save = $this->db->query($sql);
+        var_dump($sql);
+         var_dump($save);
+         echo $this->db->error;
+        die();
+ 
+        return $save;
+    }
 
     
 
