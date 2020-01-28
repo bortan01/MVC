@@ -91,6 +91,20 @@ class Producto {
       $productos =  $this->db->query("select * from productos order by id desc");
       return $productos;
     }
+    public function getAllCategoria() {
+      $sql = "select p.*, c.nombre from productos p "
+              . "inner join categorias c ON c.id = p.categoria_id "
+              . "where p.categoria_id = '{$this->getCategoria_id()}'"
+              . " order by id desc";
+      $productos =  $this->db->query($sql);
+      
+      //var_dump($sql);
+      echo  $this->db->error;
+     // die();
+      
+      return $productos;
+    }
+    
    public function save() {
         $sql = "INSERT INTO productos values  (null,'{$this->categoria_id}','{$this->nombre}', '{$this->getDescripcion()}', '{$this->precio}', '$this->stock', '{$this->oferta}', curdate(),'{$this->imagen}' )";
                
@@ -118,7 +132,7 @@ class Producto {
          
          ///verificamos si se ha subido o no una foto nueva
          if ($this->imagen == null) {
-              $sql = "UPDATE productos set nombre='{$this->nombre}',descripcion= '{$this->getDescripcion()}', precio ='{$this->precio}',stock ='$this->stock' where id = '{$this->id}'  ";
+              $sql = "UPDATE productos set nombre='{$this->nombre}',categoria_id = '{$this->categoria_id}',  descripcion= '{$this->getDescripcion()}', precio ='{$this->precio}',stock ='$this->stock' where id = '{$this->id}'  ";
          }else{
               $sql = "UPDATE productos set nombre='{$this->nombre}',descripcion= '{$this->getDescripcion()}', precio ='{$this->precio}',stock ='$this->stock',imagen='{$this->imagen}' where id = '{$this->id}'";
          }
@@ -127,10 +141,9 @@ class Producto {
        
                
         $save = $this->db->query($sql);
-        var_dump($sql);
-         var_dump($save);
          echo $this->db->error;
-        die();
+     
+       //die();
  
         return $save;
     }

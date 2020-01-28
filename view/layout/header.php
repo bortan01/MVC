@@ -22,9 +22,9 @@
             <nav id="menu">
                 <ul>
                     <li>
-                        <a href="#">INICIO  </a>
+                        <a href="<?= base_url?>">INICIO  </a>
                         <?php while ($cat = $categorias->fetch_object()) : ?>
-                            <li><a href="#"><?= $cat->nombre?></a></li>
+                    <li><a href="<?= base_url?>categoria/ver&id=<?= $cat->id?>"><?= $cat->nombre?></a></li>
                         <?php endwhile; ?>
                     </li>
 

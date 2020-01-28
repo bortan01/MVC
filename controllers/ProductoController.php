@@ -11,6 +11,8 @@ require_once 'helpers/Utils.php';
 class ProductoController {
 
     public function index() {
+        $producto = new Producto();
+        $todosLosProductots = $producto->getAll();
         include_once 'view/producto/destacados.php';
     }
 
@@ -39,7 +41,7 @@ class ProductoController {
             $imagen = isset($_POST['imagen']) ? $_POST['imagen'] : false;
 
 
-            if ($nombre && $descripcion && $precio && $stok && $categoria && $imagen) {
+            if ($nombre && $descripcion && $precio && $stok && $categoria) {
                 $producto = new Producto();
                 $producto->setNombre($nombre);
                 $producto->setDescripcion($descripcion);
@@ -179,6 +181,17 @@ class ProductoController {
             $_SESSION['dellete'] = 'fail';
         }
         header('Location:' . base_url . 'producto/gestion');
+    }
+    
+    public function ver(){
+        if (isset($_GET['id'])) {
+            $id = $_GET['id'];
+            
+            $prodcuto = new Producto();
+            $prodcuto->setId($id);
+            $myProducto = $prodcuto->getOne();
+            require_once 'view/producto/ver.php';
+        }
     }
 
 }
