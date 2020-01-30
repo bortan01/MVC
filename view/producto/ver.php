@@ -12,7 +12,7 @@
     <?php endif; ?>
         <p><?= $myProducto->descripcion?></p>
         <p><?= $myProducto->precio?></p>
-        <a href="" class="button">COMPRAR</a>
+        <a href="<?= base_url?>carrito/add&id=<?= $myProducto->id?>" class="button">COMPRAR</a>
 
 <?php else: ?>
     <h1>el producto no existe</h1>

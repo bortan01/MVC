@@ -2,17 +2,18 @@
 
 <?php if (isset($categoriaSeleccionada)): ?>
     <h1><?= $categoriaSeleccionada->nombre ?></h1>
-    <?php if ($myProducto->num_rows == 0) : ?>
+    <?php if ($productosSeleccionados->num_rows == 0) : ?>
 
         <p>No hay productos</p>
     <?php else: ?>
-        <?php while ($prod = $myProducto->fetch_object()): ?>
+        <?php while ($prod = $productosSeleccionados->fetch_object()): ?>
 
             <div class="product">
-                <a href=""></a>
-                <img src=<?= base_url ?>uploads/imageddds/<?= $prod->imagen ?>  />
-                <h2><?= $prod->nombre ?></h2>
-                <p><?= $prod->precio ?></p>
+                <a href="<?= base_url ?>producto/ver&id=<?= $prod->id ?>">
+                    <img src=<?= base_url ?>uploads/images/<?= $prod->imagen ?>>
+                    <h2><?= $prod->nombre ?></h2>
+                    <p><?= $prod->precio ?></p>
+                </a>
                 <a href="" class="button">COMPRAR</a>
             </div> 
 

@@ -24,6 +24,7 @@
                 <li><a href="<?= base_url ?>categoria/index">Gestionar Categorias</a></li>
                 <li><a href="<?= base_url ?>producto/gestion">Gestionar Productos</a></li>
                 <li><a href="#">Gestionar Pedidos</a></li>
+                <li><a href="<?= base_url?>carrito/eliminaAll">Eliminar Carrito</a></li>
             <?php endif; ?>
 
 
