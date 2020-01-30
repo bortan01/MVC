@@ -19,6 +19,7 @@ function showError() {
     $err->index();
 }
 
+if(!empty($_GET)){
 if (isset($_GET['controller'])) {
     $nombre_controlador = $_GET['controller'].'Controller';
 } else {
@@ -42,5 +43,7 @@ if(class_exists($nombre_controlador)){
     //echo 'la pagina que buscas no existe 3';
          showError();
 }
-
+}else{
+    header("Location:".base_url."producto/index");
+}
 include_once './view/layout/footer.php';

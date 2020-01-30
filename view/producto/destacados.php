@@ -8,7 +8,7 @@
             <h2><?= $prod->nombre ?></h2>
             <p><?= $prod->precio ?></p>
         </a>
-        <a href="" class="button">COMPRAR</a>
+        <a href="<?= base_url?>carrito/add&id=<?= $prod->id?>" class="button">COMPRAR</a>
     </div> 
 
 <?php endwhile; ?>
