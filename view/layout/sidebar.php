@@ -24,7 +24,12 @@
                 <li><a href="<?= base_url ?>categoria/index">Gestionar Categorias</a></li>
                 <li><a href="<?= base_url ?>producto/gestion">Gestionar Productos</a></li>
                 <li><a href="#">Gestionar Pedidos</a></li>
+               
+                <?php  $stats = Utils::statsCarrito() ?>
+                <li><a href="<?= base_url?>carrito/index">Ver Carrito</a></li>
                 <li><a href="<?= base_url?>carrito/eliminaAll">Eliminar Carrito</a></li>
+                <li><a href="<?= base_url?>carrito/index">Productos(<?= $stats['count'] ?>)  </a></li>
+                <li><a href="<?= base_url?>carrito/index">Total(<?= $stats['total'] ?>)  </a></li>
             <?php endif; ?>
 
 

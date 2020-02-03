@@ -3,10 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/wamp64/www/MVC/view/carrito/index.php</file>
+            <file>file:/C:/wamp64/www/MVC/controllers/PedidoController.php</file>
+            <file>file:/C:/wamp64/www/MVC/index_maqueta.php</file>
             <file>file:/C:/wamp64/www/MVC/controllers/CarritoController.php</file>
-            <file>file:/C:/wamp64/www/MVC/view/producto/ver.php</file>
-            <file>file:/C:/wamp64/www/MVC/controllers/CategoriaController.php</file>
-            <file>file:/C:/wamp64/www/MVC/view/categorias/ver.php</file>
+            <file>file:/C:/wamp64/www/MVC/view/pedido/hacer.php</file>
+            <file>file:/C:/wamp64/www/MVC/config/parameters.php</file>
+            <file>file:/C:/wamp64/www/MVC/models/pedido.php</file>
+            <file>file:/C:/wamp64/www/MVC/JS.js</file>
+            <file>file:/C:/wamp64/www/MVC/a.js</file>
         </group>
     </open-files>
 </project-private>

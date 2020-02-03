@@ -2,7 +2,7 @@
 require_once 'models/Producto.php';
 class CarritoController{
     public function index() {
-        echo 'controlador controller, index';   
+        include_once 'view/carrito/index.php';
     }
     
     public function add() {
@@ -16,20 +16,18 @@ class CarritoController{
         }
         
         if (isset($_SESSION['carrito'])) {  
-            $producto = new Producto();
-            $producto->setId($producto_id);
-            $productoSeleccionado = $producto->getOne();
-            
-            if (is_object($productoSeleccionado)) {
-                $_SESSION['carrito'][] =  array(
-                    "id_producto" => $productoSeleccionado->id,
-                    "precio" => $productoSeleccionado->precio,
-                    "unidades" => 1,
-                    "producto" => $productoSeleccionado
-                );
+           
+            $counter = 0;
+            foreach ($_SESSION['carrito'] as $indice => $elemento) {
+                if ($elemento['id_producto'] == $producto_id) {
+                    $_SESSION['carrito'][$indice]['unidades']++;
+                    $counter++;
+                }
             }
             
-        }else{
+            
+        }
+        if(!isset($counter)|| $counter == 0  ){
             //conseguir producto
             $producto = new Producto();
             $producto->setId($producto_id);
@@ -42,23 +40,24 @@ class CarritoController{
                     "unidades" => 1,
                     "producto" => $productoSeleccionado
                 );
+              
             }
-            
+           
           
         }
-        var_dump($_SESSION['carrito']);
-        echo 'adadfa';
-        die();
-        
-        header("Location".base_url."carrito/index");
+          
+   
+        header("Location:" . base_url . "carrito/index");
     }
     
     public function remove() {
-        
+         
     }
     
     public function eliminaAll() {
         unset($_SESSION['carrito']);
     }
+    
+    
     
 }
